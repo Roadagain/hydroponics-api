@@ -13,10 +13,24 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   </head>
   <body>
-    <a href="/">Home</a>
-    <a href="/data">Data</a>
-    <a href="/graph">Graph</a>
-    <a href="/images">Images</a>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/data">Data</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/graph">Graph</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/images">Images</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
     {% block content %}{% endblock %}
 
     <!-- optional js for bootstrap -->
