@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     message = 'Hello'
-    title = 'Welcome'
+    title = 'home'
     return render_template('index.html', message=message, title=title)
 
 @app.route('/images')
