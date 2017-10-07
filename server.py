@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return Response(response = 'Hello', status_code = 200, content_type = 'text/plain')
+    return Response(response = 'Hello', status = 200, content_type = 'text/plain')
 
 if __name__ == '__main__':
     app.run()
