@@ -1,27 +1,18 @@
 #!/usr/bin/env python3
+#coding: utf-8
 
-from flask import Flask, render_template
+from flask import Flask, jsonify, make_response
+from pymongo import MongoClient
 
 app = Flask(__name__)
+client = MongoClient('localhost', 27017)
 
 @app.route('/')
-def index():
-    message = 'Hello'
-    title = 'home'
-    return render_template('index.html', message=message, title=title)
-
-@app.route('/images')
-def images():
-    return render_template('images.html', title='images')
-
-@app.route('/data')
-def data():
-    return render_template('data.html', title='data')
-
-@app.route('/graph')
-def graph():
-    return render_template('graph.html', title='graph')
+def hello():
+    res = {
+        'data': 'Hello'
+    }
+    return make_response(jsonify(res))
 
 if __name__ == '__main__':
-    app.debug = True
-    app.run(port=8000)
+    app.run()
