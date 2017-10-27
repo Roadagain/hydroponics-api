@@ -9,10 +9,11 @@ client = MongoClient('localhost', 27017)
 
 @app.route('/')
 def hello():
-    res = {
-        'data': 'Hello'
-    }
+    res = {'data': 'Hello'}
     return make_response(jsonify(res))
 
-if __name__ == '__main__':
+def main():
     app.run()
+
+if __name__ == '__main__':
+    main()
