@@ -12,5 +12,8 @@ def hello():
     res = {'data': 'Hello'}
     return make_response(jsonify(res))
 
-if __name__ == '__main__':
+def main():
     app.run()
+
+if __name__ == '__main__':
+    main()
