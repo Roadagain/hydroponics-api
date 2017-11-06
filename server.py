@@ -33,6 +33,7 @@ def show(key):
     return make_response(jsonify(res))
 
 def main():
+    app.config['JSONIFY_PRETTYPRINT_REGULAR'] = False
     app.run()
 
 if __name__ == '__main__':
