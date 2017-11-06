@@ -19,8 +19,8 @@ def hello():
 def update(key):
     data = request.json
     print(data)
-    res = {'result': True}
-    co.insert_one(data)
+    insert_res = co.insert_one(data)
+    res = {'result': insert_res.acknowledged}
     return make_response(jsonify(res))
 
 def main():
