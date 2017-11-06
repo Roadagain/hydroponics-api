@@ -30,7 +30,7 @@ def show(key):
         del i['_id']
         data.append(i)
     res = {'result': True, 'data': data}
-    return make_response(jsonify(data))
+    return make_response(jsonify(res))
 
 def main():
     app.run()
