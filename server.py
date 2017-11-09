@@ -23,8 +23,8 @@ def update(key):
     res = {'result': insert_res.acknowledged}
     return make_response(jsonify(res))
 
-@app.route('/show/<key>', methods=['GET'])
-def show(key):
+@app.route('/fetch/<key>', methods=['GET'])
+def fetch(key):
     data = []
     for i in co.find():
         del i['_id']
