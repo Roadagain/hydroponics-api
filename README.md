@@ -1,2 +1,2 @@
-# lettuce-logger
-レタスの成長記録ジェネレータ
+# hydroponics-api
+水耕栽培データ解析システムのAPIサーバ
