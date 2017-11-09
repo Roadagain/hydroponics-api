@@ -23,7 +23,17 @@ def update(key):
     res = {'result': insert_res.acknowledged}
     return make_response(jsonify(res))
 
+@app.route('/show/<key>', methods=['GET'])
+def show(key):
+    data = []
+    for i in co.find():
+        del i['_id']
+        data.append(i)
+    res = {'result': True, 'data': data}
+    return make_response(jsonify(res))
+
 def main():
+    app.config['JSONIFY_PRETTYPRINT_REGULAR'] = False
     app.run()
 
 if __name__ == '__main__':
