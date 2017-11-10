@@ -16,8 +16,8 @@ def hello():
     res = {'data': 'Hello'}
     return make_response(jsonify(res))
 
-@APP.route('/update/<key>', methods=['POST'])
-def update(key):
+@APP.route('/update', methods=['POST'])
+def update():
     """Update database from posted json"""
     data = request.json
     print(data)
@@ -25,8 +25,8 @@ def update(key):
     res = {'result': insert_res.acknowledged}
     return make_response(jsonify(res))
 
-@APP.route('/fetch/<key>', methods=['GET'])
-def fetch(key):
+@APP.route('/fetch', methods=['GET'])
+def fetch():
     """Fetch data as a JSON from database"""
     data = []
     for i in COLLECTION.find():
