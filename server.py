@@ -3,7 +3,6 @@
 
 from flask import Flask, jsonify, make_response, request
 from pymongo import MongoClient
-import json
 
 APP = Flask(__name__)
 CLIENT = MongoClient('localhost', 27017)
