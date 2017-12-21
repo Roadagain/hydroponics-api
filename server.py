@@ -29,8 +29,8 @@ def update():
 def fetch():
     """Fetch data as a JSON from database"""
     size=request.args.get('size')
-    data = []
     query = [{'$match': {'size': {"$eq": size}}}]
+    data = []
     for i in COLLECTION.aggregate(query):
         del i['_id']
         data.append(i)
