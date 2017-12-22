@@ -28,7 +28,7 @@ def update():
 @APP.route('/fetch', methods=['GET'])
 def fetch():
     """Fetch data as a JSON from database"""
-    size=request.args.get('size')
+    size = request.args.get('size', type=int)
     query = [{'$match': {'size': {"$eq": size}}}]
     data = []
     for i in COLLECTION.aggregate(query):
