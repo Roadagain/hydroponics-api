@@ -30,6 +30,9 @@ def fetch():
     """Fetch data as a JSON from database"""
     size = request.args.get('size', type=int)
     query = {'size': size}
+    needless = [k for k in query.keys() if query[k] is None]
+    for k in needless:
+        del query[k]
     data = []
     for i in COLLECTION.find(query):
         del i['_id']
