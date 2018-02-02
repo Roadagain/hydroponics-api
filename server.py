@@ -37,7 +37,7 @@ def fetch():
     for i in COLLECTION.find(query):
         del i['_id']
         data.append(i)
-    res = {'result': True, 'data': data}
+    res = {'data': data}
     return make_response(jsonify(res)), 200
 
 def main():
