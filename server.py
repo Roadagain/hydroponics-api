@@ -14,7 +14,7 @@ COLLECTION = DB.test_collection
 def hello():
     """Test response"""
     res = {'data': 'Hello'}
-    return make_response(jsonify(res))
+    return make_response(jsonify(res)), 200
 
 @APP.route('/update', methods=['POST'])
 def update():
@@ -23,7 +23,7 @@ def update():
     print(data)
     insert_res = COLLECTION.insert_one(data)
     res = {'result': insert_res.acknowledged}
-    return make_response(jsonify(res))
+    return make_response(jsonify(res)), 200
 
 @APP.route('/fetch', methods=['GET'])
 def fetch():
@@ -38,7 +38,7 @@ def fetch():
         del i['_id']
         data.append(i)
     res = {'result': True, 'data': data}
-    return make_response(jsonify(res))
+    return make_response(jsonify(res)), 200
 
 def main():
     """Main function"""
