@@ -32,7 +32,7 @@ def fetch():
     query = dict()
     for k, v in request.args.items():
         tipe = TYPES[k[0]]
-        query[k] = request.args.get(k, type=tipe)
+        query[k[1:]] = request.args.get(k, type=tipe)
     data = []
     for i in COLLECTION.find(query):
         del i['_id']
