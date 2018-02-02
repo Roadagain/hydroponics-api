@@ -29,6 +29,7 @@ def update():
 def fetch():
     """Fetch data as a JSON from database"""
     TYPES = {'i': int, 's': str, 'f': float}
+    query = dict()
     for k, v in request.args.items():
         tipe = TYPES[k[0]]
         query[k] = request.args.get(k, type=tipe)
