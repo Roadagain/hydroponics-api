@@ -28,8 +28,12 @@ def update():
 @APP.route('/fetch', methods=['GET'])
 def fetch():
     """Fetch data as a JSON from database"""
+    TYPES = {'i': int, 's': str, 'f': float}
+    for k, v in request.args.items():
+        tipe = TYPES[k[0]]
+        query[k] = request.args.get(k, type=tipe)
     data = []
-    for i in COLLECTION.find():
+    for i in COLLECTION.find(query):
         del i['_id']
         data.append(i)
     res = {'result': True, 'data': data}
